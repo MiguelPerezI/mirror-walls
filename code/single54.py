@@ -22,4 +22,4 @@ for seed in range(6):
     print(f"seed {seed}: (movers, stationary) at t=60: {snap[60]}, t=500: {snap[500]}, t=740: {snap[740]}; "
           f"defect density at walls (6 cells) early {wall[:150].mean():.3f}, late {wall[-150:].mean():.3f}")
     tiles.append(upscale((255*(1-D[::3])).astype(np.uint8), 1))
-write_gray('/home/mike666/heat-parity-ca/figures/rule54_single_patch.png', montage(tiles, cols=3, gap=8)); print('ok')
+write_gray('../figures/rule54_single_patch.png', montage(tiles, cols=3, gap=8)); print('ok')

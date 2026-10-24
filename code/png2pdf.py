@@ -1,6 +1,6 @@
 """Convert the 8-bit grayscale PNGs written by pngio.py (filter 0) into vector PDFs:
 each maximal run of equal cells (merged over identical consecutive rows) becomes one filled rectangle,
-so the figure is crisp at any zoom. usage: python3.12 png2pdf.py in.png [in2.png ...]  -> same name .pdf"""
+so the figure is crisp at any zoom. usage: python3 png2pdf.py in.png [in2.png ...]  -> same name .pdf"""
 import sys, zlib, struct, numpy as np
 
 def read_png(path):

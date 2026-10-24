@@ -23,4 +23,4 @@ for a in avals:
         tiles.append((255*(1-np.minimum(1, 4*d))).astype(np.uint8))
         print(f"candidate a={a:.3f}  late activity {A.mean():.3f} +- {A.std():.3f}")
 print("all:", ' '.join(f"{a:.2f}:{m:.2f}" for a, m, s in res))
-if tiles: write_gray('/home/mike666/heat-parity-ca/figures/scan2d_candidates.png', montage(tiles, cols=6))
+if tiles: write_gray('../figures/scan2d_candidates.png', montage(tiles, cols=6))

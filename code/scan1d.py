@@ -28,5 +28,5 @@ for a in avals:
             d = np.diff(np.concatenate([[0], A.astype(int), [0]]))
             ncomp = int((d == 1).sum()); width = int(A.sum())
     print(f"{a:6.3f} {ar:10.3f} {am:11.3f} {ncomp:13d} {width:6d}")
-write_gray('/home/mike666/heat-parity-ca/figures/scan1d_random.png', montage(tiles_r))
-write_gray('/home/mike666/heat-parity-ca/figures/scan1d_single.png', montage(tiles_s))
+write_gray('../figures/scan1d_random.png', montage(tiles_r))
+write_gray('../figures/scan1d_single.png', montage(tiles_s))

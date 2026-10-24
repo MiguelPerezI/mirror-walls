@@ -57,7 +57,7 @@ excess (in $46$ of $90$). In rule~110, which is not reflection
 symmetric, the principle fails and a wall becomes a phase source that
 can replace the background. In two and three dimensions the boundary
 strata, indexed by the ternary cube, are quiet in proportion to their
-codimension, and phase walls are cleared from a layer several cells deep
+codimension, and phase walls are cleared from a margin tens of cells deep
 by annihilation with their images. We discuss in what limited sense the
 box acts as a selecting environment.
 \end{abstract}
@@ -132,9 +132,9 @@ value $u_{-1}:=u_{1}$ (lower wall) or $u_{N}:=u_{N-2}$ (upper wall).
 This is the explicit heat step with Neumann walls followed by a shift and
 a fold, a coupled map lattice in the sense of \cite{Kaneko}. Wolfram
 reports class-4 behaviour in one dimension for $a=0.398$ and $a=0.4$
-\cite[p.~244]{NKS}. Values are rounded to nine decimals after each step
-to emulate exact arithmetic, which makes runs reproducible across
-machines.
+\cite[p.~244]{NKS}. Values are rounded to nine decimals after each step,
+which makes the dynamics a map on a finite state set and runs
+reproducible across machines.
 
 \paragraph{Elementary automata.} For an elementary rule $f$ on
 $\{0,1\}^N$, the box uses the same mirror ghosts, $u_{-1}:=u_1$ and
@@ -160,8 +160,9 @@ $\mathcal R=\mathcal R_1\cdots\mathcal R_n$ for the reflection into the
 torus $\mathbb T=\prod_m\Z/2(N_m-1)\Z$.
 
 \begin{theorem}[reflection principle]\label{thm:reflection}
-Let $F$ be a local rule whose per-axis stencil is symmetric under
-$i\mapsto-i$, followed by any pointwise map. Let $F_{\rm box}$ be $F$ on
+Let $F$ be a local rule invariant under each axis reflection
+$i_m\mapsto-i_m$ (for instance a symmetric per-axis stencil followed by
+any pointwise map, or a reflection-symmetric elementary rule). Let $F_{\rm box}$ be $F$ on
 the box with mirror ghosts and $F_{\rm per}$ the same rule on
 $\mathbb T$. Then
 \[
@@ -271,7 +272,7 @@ classes agree between the geometries ($104$ against $105$ steps for
 movers, $59$ against $60$ for the slow class). Total cluster counts over
 $2\cdot10^4$ steps fluctuate around $30$ in both geometries with no
 trend. Near the walls, the wall node has activity $0.09$ and its
-neighbour $0.23$ against a bulk value of $0.27$, after which the bulk
+neighbour $0.23$ against a bulk value of $0.28$, after which the bulk
 value is reached: a quiet layer two cells deep, as
 Corollary~\ref{cor:self} predicts, and nothing else. Walls that reflect
 elastically do not select.
@@ -355,7 +356,8 @@ $88$ of the $90$ rings.}
 
 This is Proposition~\ref{prop:balance} at work. The hypotheses hold in
 the sparse regime by the enumeration above: every head-on meeting of
-single movers annihilates, and trains lose one member per meeting. On
+single movers annihilates, and a train loses one member for each single mover it
+meets. On
 the ring the unbalanced movers never meet a partner and live forever;
 in the box each mover's partner is its own image, so all of them die,
 each within one crossing of the box (Figure~\ref{fig:r54sparse}). In the
@@ -369,9 +371,9 @@ structures can absorb, reflect or convert movers \cite{Martinez2006}).
 \includegraphics[width=0.85\textwidth]{rule54_sparse.pdf}
 \caption{One sparse launch, off-ether display, $1200$ steps (every
 second step shown), ring of $400$ cells (left) and box of $401$ cells
-(right), same patch. The patch emits a train of three left movers and
+(right), same patch. The patch emits a train of four left movers and
 one right mover. On the ring the right mover meets the train across the
-periodic seam and annihilates one member; the other two circulate
+periodic seam and annihilates one member; the other three circulate
 forever. In the box every mover meets its image at a wall.}
 \label{fig:r54sparse}
 \end{figure}
@@ -418,8 +420,8 @@ background, which advances into the box and emits gliders.}
 mean plus $a$ modulo~$1$. A scan of $a$ in steps of $0.01$ on a $128^2$
 torus from random data (script \texttt{scan2d.py}) gives a late activity
 fraction that varies continuously with $a$, from $0.29$ near $a=0.01$ to
-$0.92$ on the plateaus $a\in[0.34,0.43]$ and $[0.57,0.66]$, with dips to
-$0.43$--$0.45$ near $a=\frac13,\frac12,\frac23$. There are no sharp
+$0.90$--$0.92$ on the plateaus $a\in[0.34,0.43]$ and $[0.57,0.66]$, with dips
+to $0.42$--$0.45$ near $a=\frac13,\frac12,\frac23$. There are no sharp
 class-4 windows of the one-dimensional kind, and the one-dimensional
 class-4 value $a=0.398$ is fully chaotic in two dimensions. Space-time
 cuts (Figure~\ref{fig:cuts}) show three regimes: near $a=\frac13$ and
@@ -451,7 +453,7 @@ steps $0,50,100,200$ (top row of each strip) and $400,600,800,1200$
 (bottom row). Upper strip, $a=0.33$: random data collapse within fifty
 steps into a period-three background crossed by phase walls, which then
 wander, join and pinch off; walls parallel to a side are cleared from a
-margin several cells wide, walls perpendicular to it end on it. Lower
+margin several cells wide (tens of cells on larger boxes), walls perpendicular to it end on it. Lower
 strip, $a=0.49$: intermittent spots on a period-two background, born and
 dying everywhere except at the corners.}
 \label{fig:box033}
@@ -465,7 +467,13 @@ over all existing neighbour differences of
 $\dist(u_{\mathbf i}-u_{\mathbf j},\Z)>0.05$. Grids are $128^2$ for
 $1500$ steps and $32^3$ for $800$ steps, averaged after a transient of
 one third of the run, over eight seeds (script \texttt{strata\_seeds.py}).
-Table~\ref{tab:strata} gives the results.
+Table~\ref{tab:strata} gives the results. A CuPy implementation of the
+same automaton (\texttt{contca\_gpu.py}, \texttt{strata\_gpu.py})
+reproduces every entry bit for bit and computes a row of the table in a
+fraction of a second instead of about a minute on one CPU core, which
+allows larger boxes: Table~\ref{tab:strata_big} repeats the
+measurement on $1024^2$ for $3000$ steps and on $128^3$ for $1500$ steps,
+with sixteen seeds.
 
 \begin{table}[tbp]
 \centering
@@ -487,11 +495,36 @@ last digits in parentheses.}
 \label{tab:strata}
 \end{table}
 
+\begin{table}[tbp]
+\centering
+\begin{tabular}{@{}llllll@{}}
+\toprule
+regime & grid & codim $0$ & codim $1$ & codim $2$ & codim $3$ \\
+\midrule
+chaos, $a=0.398$ & $1024^2$ & 0.989(0) & 0.949(0) & 0.745(3) & \\
+chaos, $a=0.398$ & $128^3$  & 0.997(0) & 0.993(0) & 0.981(0) & 0.922(1) \\
+intermittent, $a=0.49$ & $1024^2$ & 0.551(0) & 0.494(0) & 0.207(2) & \\
+intermittent, $a=0.49$ & $128^3$  & 0.451(0) & 0.474(0) & 0.487(1) & 0.309(2) \\
+phase walls, $a=0.33$ & $1024^2$ & 0.561(1) & 0.351(1) & 0.165(6) & \\
+chaos (3-D rule), $a=0.33$ & $128^3$ & 0.999(0) & 0.999(0) & 0.995(0) & 0.898(10) \\
+\bottomrule
+\end{tabular}
+\caption{The measurement of Table~\ref{tab:strata} on larger boxes:
+$1024^2$ for $3000$ steps and $128^3$ for $1500$ steps, sixteen seeds,
+same transient, threshold and rounding (script \texttt{strata\_gpu.py}).
+The strata with many nodes now have standard errors of at most $0.001$; the
+corner strata keep four or eight nodes per run and do not sharpen with
+the box size.}
+\label{tab:strata_big}
+\end{table}
+
 Four observations. First, in the chaotic regime the activity decreases
 monotonically with the codimension of the stratum, in both dimensions,
 and the boundary layer is one cell deep: at distance one from the
 nearest wall the two-dimensional activity is already $0.982$ against
-$0.989$ in the bulk. This is the kinematic effect of
+$0.989$ in the bulk. In three dimensions the values are the same to
+three decimals from $32^3$ to $128^3$; in two dimensions they change by
+at most $0.007$ from $128^2$ to $1024^2$. This is the kinematic effect of
 Corollary~\ref{cor:self}: a node of codimension $c$ has $c$ of its
 neighbour pairs identified by symmetry, so it has fewer independent
 neighbours to differ from, and the effect compounds with $c$. Part of
@@ -499,15 +532,27 @@ the trend is therefore a property of the indicator, which takes a
 maximum over fewer independent differences on the strata. Second, in the
 intermittent regime the corner is strongly suppressed in both
 dimensions ($0.20$ against $0.56$ in two dimensions, $0.31$ against
-$0.48$ in three), while the three-dimensional faces and edges sit
-slightly above the bulk value. So in two dimensions the spots avoid the
+$0.48$ in three on $32^3$ and against $0.45$ on $128^3$), while the
+three-dimensional faces and edges sit above the bulk value: the faces
+by $0.02$ on both boxes, the edges by $0.02$ on $32^3$ and $0.04$ on
+$128^3$.
+In this regime the wall is felt beyond one cell, in the opposite sense:
+the activity overshoots the bulk at distances $2$--$4$ in two dimensions
+($0.59$ against $0.55$) and at distance $1$ in three ($0.49$ against
+$0.45$), and relaxes within five to seven cells. So in two dimensions the spots avoid the
 corners but not the walls, and in three dimensions only the eight corner
 nodes are special; the twelve edges, which are the analogue of the
 two-dimensional corners, are not. Third, the phase-wall regime is the
 one in which the box is felt at a distance: the activity profile
 against the distance to the nearest wall is
-$0.34,\,0.38,\,0.43,\,0.45,\,0.46,\,0.47$ for distances $0$ to $5$,
-still rising at distance five, against one cell in the other regimes.
+$0.34,\,0.38,\,0.43,\,0.45,\,0.46,\,0.47$ for distances $0$ to $5$ on
+$128^2$, still rising at distance five. On $1024^2$ the profile keeps
+rising, to $0.50$ at distance $7$, $0.53$ at $16$ and $0.55$ at $24$, and
+reaches the bulk value $0.56$ only $35$--$40$ cells from the wall. So the
+codimension-$0$ entry of Table~\ref{tab:strata} for this regime is not a
+bulk value but an average over a box most of which lies in the margin
+($0.51$ on $128^2$, $0.54$ on $256^2$, $0.55$ on $512^2$, $0.56$ on
+$1024^2$), while the face and corner entries are stable in the box size.
 Corollary~\ref{cor:self} says why: a phase wall parallel to a mirror
 meets its image, a phase wall of opposite orientation, and the pair
 annihilates when the strip between them collapses, so a margin along
@@ -516,8 +561,10 @@ perpendicular to the mirror are their own images, end on it, and are
 the activity that remains at distance zero. This is the two-dimensional
 counterpart of the absorbing walls of rule~54. Fourth, the same
 $a=0.33$ is chaotic under the seven-point rule in three dimensions, with
-the one-cell layer of the chaotic regime, which shows that the regime,
-not the constant, is what the strata respond to.
+the one-cell layer of the chaotic regime (on $64^3$, $96^3$ and $128^3$
+the faces equal the bulk, $0.999$, and only the edges, $0.994$--$0.995$,
+and the corners, $0.89$--$0.90$, depart), which shows that the regime, not the
+constant, is what the strata respond to.
 
 \section{Discussion: is the box a selecting environment?}\label{sec:disc}
 
@@ -556,15 +603,24 @@ All scripts, the figures and the source of this article are public at
 \url{https://github.com/MiguelPerezI/mirror-walls}. In \texttt{code/}:
 \texttt{contca.py} (rule \eqref{eq:cca} with ternary-cube walls) and
 \texttt{reflection\_principle.py} (Theorem~\ref{thm:reflection});
-\texttt{view1d.py}, \texttt{tracker.py}, \texttt{perstep.py} and
-\texttt{population.py} (Section~\ref{sec:cca}); \texttt{eca.py},
+\texttt{view1d.py}, \texttt{tracker.py}, \texttt{catalogue2.py},
+\texttt{slowclass2.py}, \texttt{perstep.py}, \texttt{population.py} and
+\texttt{wall1d.py} (Section~\ref{sec:cca}); \texttt{eca.py},
 \texttt{rule54\_exact.py}, \texttt{rule54\_phases.py},
 \texttt{rule54\_sparse.py}, \texttt{rule54\_charge.py} and
-\texttt{fig\_rule54.py} (Section~\ref{sec:r54}); \texttt{eca\_box.py}
+\texttt{fig\_rule54.py} (Section~\ref{sec:r54}); \texttt{eca\_box.py},
+\texttt{rule110\_ether.py} and \texttt{fig\_rule110.py}
 (Section~\ref{sec:r110}); \texttt{scan2d.py}, \texttt{cuts2d.py},
 \texttt{filmstrip2d.py} and \texttt{strata\_seeds.py}
-(Section~\ref{sec:2d}). \texttt{view2d.py} is a live viewer of the
-two-dimensional box (\texttt{python3.12 view2d.py 0.33 160 mirror}).
+(Section~\ref{sec:2d}); \texttt{contca\_gpu.py} and
+\texttt{strata\_gpu.py} are CuPy versions of the automaton and of the
+strata measurement, bit-identical to the NumPy ones
+(Table~\ref{tab:strata_big}). The script \texttt{reproduce.sh} at the top
+of the repository runs all of them with the arguments used here, writes
+their outputs to \texttt{results/} and regenerates the figures, and
+\texttt{check\_results.py} compares every number quoted in this article
+with those outputs. \texttt{view2d.py} is a live viewer of the
+two-dimensional box (\texttt{python3 view2d.py 0.33 160 mirror}).
 
 \begin{thebibliography}{99}
 \bibitem{TernaryCube}

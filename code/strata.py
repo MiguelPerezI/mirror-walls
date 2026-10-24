@@ -1,5 +1,5 @@
 """Activity per boundary stratum (by codimension) for the box CA with mirror walls, n = 2 and 3.
-usage: python3.12 strata.py a N2 T2 N3 T3"""
+usage: python3 strata.py a N2 T2 N3 T3"""
 import sys, numpy as np
 from contca import step, codim
 DEC, TH = 9, 0.05
@@ -34,4 +34,4 @@ for n, N, T in ((2, N2, T2), (3, N3, T3)):
     if n == 2:
         from pngio import write_gray, upscale
         d = np.mod(u - np.roll(u,-1,1), 1.0); d = np.minimum(d, 1-d)
-        write_gray(f'/home/mike666/heat-parity-ca/figures/box2d_a{a}.png', upscale((255*(1-np.minimum(1,4*d))).astype(np.uint8), 2))
+        write_gray(f'../figures/box2d_a{a}.png', upscale((255*(1-np.minimum(1,4*d))).astype(np.uint8), 2))

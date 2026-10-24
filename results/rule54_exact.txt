@@ -1,0 +1,19 @@
+# rule54_exact.py 10
+L=10: phase classes of an isolated right mover (residue mod 4 at t = 0 mod 4, shape): 3
+   residue 2 shape [1 1 0 0 0 0 0 0 0 0 0 0] (single mover)
+   residue 2 shape [1 1 0 0 1 1 0 0 1 1 0 0] (train of 3 movers)
+   residue 2 shape [1 1 0 0 1 1 0 0 0 0 0 0] (train of 2 movers)
+wall events (class, start residue, census after, cells off-ether after) -> count
+    (0, 0, '{}', 0) 2   [class 0 = single mover]
+    (1, 0, '{}', 0) 2   [class 1 = train of 3 movers]
+    (2, 0, '{}', 0) 2   [class 2 = train of 2 movers]
+single-mover classes: right [2], left [1] (residue of first off-ether cell at t = 0 mod 4)
+torus head-on collisions, one w+ blob against one w- blob (census after 400 steps, cells off-ether) -> number of offsets q
+    ("{'w-': 1}", 6) 4
+    ('{}', 0) 4
+the same, split by the movers before the collision (t = 32):
+    ('single mover (w+) vs single mover (w-)', '{}', 0) 4 offsets, q mod 4 in [0]
+    ('single mover (w+) vs train of 4 movers (w-)', "{'w-': 1}", 6) 4 offsets, q mod 4 in [2]
+head-on collisions of two single movers: 1 outcome class(es): annihilation, pure ether left
+  single mover (w+) vs single mover (w-): state mirror-symmetric about the nodes [202, 442] at every step t = 32..400: True
+example offsets: {("{'w-': 1}", 6): 2, ('{}', 0): 0}

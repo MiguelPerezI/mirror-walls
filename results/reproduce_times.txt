@@ -1,0 +1,36 @@
+# reproduce.sh started 2026-10-24 12:43:20 -0600, QUICK=0
+# PYTHON: CPython 3.14.4 numpy 2.3.5
+         0.9 s  reflection_principle.py
+         0.5 s  view1d.py 0.398 300 600
+         5.9 s  png2pdf.py ../figures/class4_1d_a0.398_periodic.png ../figures/class4_1d_a0.398_mirror.png ../figures/class4_1d_wallzoom.png
+         1.9 s  catalogue2.py
+        17.8 s  slowclass2.py
+        23.2 s  perstep.py
+         2.7 s  population.py
+         1.3 s  wall1d.py
+        58.3 s  rule54_exact.py 10
+        24.1 s  rule54_phases.py
+        22.6 s  rule54_sparse.py
+         0.5 s  fig_rule54.py
+         1.4 s  rule54_charge.py
+         0.8 s  rule110_ether.py
+         0.7 s  fig_rule110.py
+        12.3 s  eca_box.py
+        33.2 s  scan2d.py
+         5.7 s  cuts2d.py
+         2.9 s  png2pdf.py ../figures/cuts2d_spacetime.png
+         0.7 s  filmstrip2d.py 0.33
+         0.6 s  filmstrip2d.py 0.49
+         4.1 s  png2pdf.py ../figures/filmstrip2d_a0.33.png ../figures/filmstrip2d_a0.49.png
+        57.5 s  strata_seeds.py 0.398 128 1500 32 800 8
+        55.4 s  strata_seeds.py 0.49 128 1500 32 800 8
+        55.6 s  strata_seeds.py 0.33 128 1500 32 800 8
+# PYTHON_GPU: CPython 3.12.13 numpy 2.5.4 cupy 14.2.0 NVIDIA GeForce RTX 5080 Laptop GPU
+         3.7 s  contca_gpu.py
+        56.8 s  strata_gpu.py 0.398 1024 3000 128 1500 16
+        56.0 s  strata_gpu.py 0.49 1024 3000 128 1500 16
+        56.2 s  strata_gpu.py 0.33 1024 3000 128 1500 16
+         6.7 s  strata_gpu.py 0.33 256 3000 64 1500 16
+        20.5 s  strata_gpu.py 0.33 512 3000 96 1500 16
+        25.1 s  strata_gpu.py 0.33 1024 3000 0 0 16 40
+total 617.4 s

@@ -18,6 +18,7 @@ def counts(u, E, bc):
 if __name__ == "__main__":
   T = int(sys.argv[1]) if len(sys.argv) > 1 else 6000
   for bc, N in (('periodic', 1200), ('mirror', 1201)):
+      movers = []
       for seed in range(3):
           rng = np.random.default_rng(seed); u = ether(N); u[200:N-200] = rng.integers(0, 2, N-400); E = ether(N)
           out = []
@@ -25,4 +26,7 @@ if __name__ == "__main__":
               if t % 1000 == 0 and t > 0: out.append(counts(u, E, bc))
               u = step(u, 54, bc); E = step(E, 54, bc)
           print(bc, seed, "  (N+, N-, off-ether cells) at t=1000..:", out, flush=True)
+          movers += [p + m for p, m, _ in out]
+      mv = np.array(movers)
+      print(f"{bc}: movers N+ + N- over 3 seeds x {len(out)} times: mean {mv.mean():.1f} +- {mv.std(ddof=1)/np.sqrt(len(mv)):.1f} (standard error)", flush=True)
   

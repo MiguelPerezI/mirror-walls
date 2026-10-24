@@ -1,0 +1,3 @@
+# fig_rule54.py
+seed used for the sparse figure: 9 ; shapes (166, 498) (608, 816)
+sparse figure, ring: (N+, N-) at t=100 (1, 4), at t=2000 (0, 3); box: at t=100 (1, 4), at t=2000 (0, 0)

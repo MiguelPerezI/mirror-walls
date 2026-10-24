@@ -25,8 +25,8 @@ for bc in ('periodic', 'neumann'):
         if seed == 0:
             S = np.array(st)  # 1000 x 400
             img = (255*(1-np.minimum(1, 2*S))).astype(np.uint8)
-            write_gray(f'/home/mike666/heat-parity-ca/figures/wall1d_{bc}_full.png', img)
-            write_gray(f'/home/mike666/heat-parity-ca/figures/wall1d_{bc}_leftwall.png', upscale(img[:, :60], 3))
+            write_gray(f'../figures/wall1d_{bc}_full.png', img)
+            write_gray(f'../figures/wall1d_{bc}_leftwall.png', upscale(img[:, :60], 3))
     prof /= cnt
     bulk = prof[100:300].mean()
     print(f"{bc:8s}  bulk activity={bulk:.3f}   first 12 cells: {np.round(prof[:12],3)}   last 12: {np.round(prof[-12:],3)}")

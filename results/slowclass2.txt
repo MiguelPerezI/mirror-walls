@@ -1,0 +1,5 @@
+# slowclass2.py
+periodic: bulk tracks 1826, slow fraction in bulk = 0.061 (111 slow, 1715 fast); mean life slow 59, fast 104
+          slow-track centres by distance to nearest wall [0-5,5-20,20-50,>50]: counts [ 42  30  15 111], per cell [4.2  1.   0.25 0.37]
+mirror  : bulk tracks 1966, slow fraction in bulk = 0.043 (85 slow, 1881 fast); mean life slow 60, fast 105
+          slow-track centres by distance to nearest wall [0-5,5-20,20-50,>50]: counts [85 27 17 84], per cell [8.5   0.9   0.283 0.28 ]

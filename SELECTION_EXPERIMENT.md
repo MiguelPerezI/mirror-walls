@@ -186,7 +186,10 @@ it does (figures `rule110_defects_fixed.png`, `rule110_rightwall_raw.png`):
   F 15 %, E 14 %, A 8 %; box A 48 %, B 15 %, E 15 %. The wall-scattering
   table (tracks within 40 cells of a wall) shows why: left wall, 15
   incoming (mostly F and E), 16 outgoing (13 of them A); right wall, 4 in,
-  4 out.
+  4 out. (Note 2026-10-24: these torus fractions came from an earlier
+  `eca.defects`; the current code gives torus B 39 %, C 16 %, E 14 %,
+  F 13 %, A 8 %, see `code/eca_box_110.txt` and `results/eca_box.txt`.
+  No number of the article depends on them.)
 
 So for an asymmetric rule the box does change the population, but by
 emission from a wall that acts as a phase source and glider gun, not by

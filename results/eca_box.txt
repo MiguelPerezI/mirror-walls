@@ -1,0 +1,5 @@
+# eca_box.py
+periodic: bulk tracks 83: B=32 (0.39), C=13 (0.16), E=12 (0.14), F=11 (0.13), A=7 (0.08), D=5 (0.06), ?=3 (0.04)
+          per-step: bulk defect density 0.0750, bulk clusters per 1100 cells 4.0, defect density within 30 cells of the ends 0.0005
+mirror  : bulk tracks 48: A=23 (0.48), B=7 (0.15), E=7 (0.15), C=5 (0.10), F=4 (0.08), D=2 (0.04)
+          per-step: bulk defect density 0.0548, bulk clusters per 1100 cells 4.3, defect density within 30 cells of the ends 0.3473

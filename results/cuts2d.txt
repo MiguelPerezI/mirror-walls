@@ -1,0 +1,7 @@
+# cuts2d.py
+a=0.330  late activity=0.390  persistence P(active at t+1 | active at t)=0.712 (random would be 0.390)
+a=0.490  late activity=0.291  persistence P(active at t+1 | active at t)=0.664 (random would be 0.291)
+a=0.510  late activity=0.293  persistence P(active at t+1 | active at t)=0.662 (random would be 0.293)
+a=0.670  late activity=0.313  persistence P(active at t+1 | active at t)=0.707 (random would be 0.313)
+a=0.020  late activity=0.266  persistence P(active at t+1 | active at t)=0.720 (random would be 0.266)
+a=0.398  late activity=0.731  persistence P(active at t+1 | active at t)=0.744 (random would be 0.731)

@@ -33,3 +33,5 @@ for bc, N in (('periodic', 400), ('mirror', 401)):
 b = montage(out, cols=2, gap=8, bg=200)
 write_gray('../figures/rule54_sparse.png', b); write_pdf('../figures/rule54_sparse.pdf', b)
 print('seed used for the sparse figure:', seed, '; shapes', a.shape, b.shape)
+print(f"sparse figure, ring: (N+, N-) at t=100 {tuple(int(x) for x in P[seed, 0, :2])}, at t=2000 {tuple(int(x) for x in P[seed, -1, :2])}; "
+      f"box: at t=100 {tuple(int(x) for x in B[seed, 0, :2])}, at t=2000 {tuple(int(x) for x in B[seed, -1, :2])}")

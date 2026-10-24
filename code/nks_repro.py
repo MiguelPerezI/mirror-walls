@@ -26,4 +26,4 @@ for a, k in ((0.398, 1.0), (0.4, 1.0), (0.5, 1.13), (0.3, 1.0)):
         tiles.append((255*(1-np.minimum(1, 4*diff[::2]))).astype(np.uint8))  # 400 rows x 400 cols
         A = act[T//2:]
         print(f"a={a:5.3f} k={k:4.2f} {bc:8s}  active fraction (late) mean={A.mean():.3f} min={A.min():.3f} max={A.max():.3f}")
-write_gray('/home/mike666/heat-parity-ca/figures/nks_repro.png', montage(tiles, cols=2))
+write_gray('../figures/nks_repro.png', montage(tiles, cols=2))

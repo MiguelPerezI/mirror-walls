@@ -14,5 +14,5 @@ for t in range(1201):
         d = np.mod(u - shift(u,1,-1), 1.0); d = np.minimum(d, 1-d)
         tiles.append(upscale((255*(1-np.minimum(1,4*d))).astype(np.uint8), 2))
     u = step(u)
-path = f'/home/mike666/heat-parity-ca/figures/filmstrip2d_a{a}.png'
+path = f'../figures/filmstrip2d_a{a}.png'
 write_gray(path, montage(tiles, cols=4)); print(path)

@@ -1,0 +1,10 @@
+# rule54_sparse.py
+periodic: mean movers at t=(100, 300, 600, 1000, 1500, 2000): [22.005, 42.035, 42.22, 42.055, 41.61, 41.455]; seeds with movers left at t=2000: 156/200; back to pure ether: 31/200; stationary debris only: 13/200
+mirror  : mean movers at t=(100, 300, 600, 1000, 1500, 2000): [22.005, 41.64, 41.94, 41.83, 41.325, 41.14]; seeds with movers left at t=2000: 110/200; back to pure ether: 77/200; stationary debris only: 13/200
+torus survivors at t=2000, histogram: [44, 14, 12, 15, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 24, 10, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 9, 4, 7, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 8, 21, 4]
+torus: |N+ - N-| at t=100 vs movers at t=2000, agreement in 88 of 200 seeds
+
+without guns (90 seeds):
+  periodic: mean movers [2.056, 1.167, 1.144, 1.144, 1.144, 1.144], seeds with movers at t=2000: 46
+  mirror  : mean movers [2.056, 0.0, 0.0, 0.0, 0.0, 0.0], seeds with movers at t=2000: 0
+  torus survivors: all same direction in 90 of 90 ; N+ - N- at t=300 equals N+ - N- at t=2000 in 88 seeds

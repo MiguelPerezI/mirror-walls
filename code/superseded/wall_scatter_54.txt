@@ -1,0 +1,5 @@
+# SUPERSEDED: output of the rule-54 defect detector of SELECTION_EXPERIMENT.md Part B2 (non-ether 4-words, clusters with gap 2), which counts each mover about twice and merges trains; see the erratum at the top of SELECTION_EXPERIMENT.md. Exact replacements: rule54_exact.py, rule54_phases.py, rule54_sparse.py, rule54_charge.py (outputs in results/).
+rule 54 wall L: incoming  958 {'?': 5, 'g': 4, 'w-': 949}
+rule 54 wall L: outgoing   32 {'w+': 32}
+rule 54 wall R: incoming  382 {'w+': 382}
+rule 54 wall R: outgoing    0 {}

@@ -1,4 +1,0 @@
-rule 54 wall L: incoming  958 {'?': 5, 'g': 4, 'w-': 949}
-rule 54 wall L: outgoing   32 {'w+': 32}
-rule 54 wall R: incoming  382 {'w+': 382}
-rule 54 wall R: outgoing    0 {}

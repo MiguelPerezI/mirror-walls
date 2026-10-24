@@ -1,0 +1,3 @@
+# perstep.py
+periodic: bulk clusters/cell/step=0.0723  wide(>=6)/cell/step=0.02937  wide fraction=0.4064  wide per cluster^2 (x1e3)=5621.46  | within 10 cells of 0/N-1: clusters/cell/step=0.0942 wide fraction=0.3017
+mirror  : bulk clusters/cell/step=0.0723  wide(>=6)/cell/step=0.02948  wide fraction=0.4077  wide per cluster^2 (x1e3)=5639.44  | within 10 cells of 0/N-1: clusters/cell/step=0.0762 wide fraction=0.3617

@@ -1,0 +1,3 @@
+# reflection_principle.py
+1-D: max |box - doubled periodic| over 3000 steps = 0.000e+00
+2-D: max |box - doubled torus| over 1000 steps = 0.000e+00   (doubled size (126, 126))

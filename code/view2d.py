@@ -1,5 +1,5 @@
 """Live pygame viewer of the continuous CA on a box with mirror walls (or periodic).
-usage: python3.12 view2d.py [a] [N] [mirror|periodic]      keys: space = pause, r = reseed, q = quit
+usage: python3 view2d.py [a] [N] [mirror|periodic]      keys: space = pause, r = reseed, q = quit
 Try a = 0.33 (phase walls), 0.49 (intermittent spots), 0.398 (chaos)."""
 import sys, numpy as np, pygame
 a = float(sys.argv[1]) if len(sys.argv) > 1 else 0.33

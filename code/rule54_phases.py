@@ -30,3 +30,5 @@ print("movers (direction, residue mod 4, extent) -> observations")
 for k, n in sorted(seen.items(), key=lambda x: -x[1])[:20]: print("   ", k, n)
 print("stationary (kind, residue, shape) -> observations:", len(gutters), "distinct;", sum(gutters.values()), "observations")
 for k, n in sorted(gutters.items(), key=lambda x: -x[1])[:6]: print("   ", k, n)
+res = {d: sorted({k[1] for k in seen if k[0] == d}) for d in ('w+', 'w-')}
+print(f"summary: {sum(seen.values())} mover observations in 1500 launches; residues mod 4 seen: w+ {res['w+']}, w- {res['w-']}")

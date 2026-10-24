@@ -1,0 +1,4 @@
+# fig_rule110.py
+periodic: defect fraction over steps 1500..1999: 0.1871
+mirror  : defect fraction over steps 1500..1999: 0.5205
+../figures/rule110_defects_fixed.png (1008, 1696)

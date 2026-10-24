@@ -1,0 +1,4 @@
+# view1d.py 0.398 300 600
+../figures/class4_1d_a0.398_periodic.png
+../figures/class4_1d_a0.398_mirror.png
+../figures/class4_1d_wallzoom.png

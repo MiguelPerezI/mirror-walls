@@ -1,0 +1,6 @@
+# contca_gpu.py
+(64, 64) neumann a=0.398 T=200: max|gpu-cpu| over all steps = 0.000e+00, activity mismatches = 0, equal arrays = True
+(64, 64) periodic a=0.398 T=200: max|gpu-cpu| over all steps = 0.000e+00, activity mismatches = 0, equal arrays = True
+(16, 16, 16) neumann a=0.398 T=200: max|gpu-cpu| over all steps = 0.000e+00, activity mismatches = 0, equal arrays = True
+(16, 16, 16) periodic a=0.398 T=200: max|gpu-cpu| over all steps = 0.000e+00, activity mismatches = 0, equal arrays = True
+batched 4 seeds == separate runs: True

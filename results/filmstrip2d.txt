@@ -1,0 +1,4 @@
+# filmstrip2d.py 0.33
+../figures/filmstrip2d_a0.33.png
+# filmstrip2d.py 0.49
+../figures/filmstrip2d_a0.49.png

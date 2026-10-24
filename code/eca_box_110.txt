@@ -1,3 +1,4 @@
+# Lab-notebook output of eca_box.py made with an earlier eca.defects (flag on the first cell of each 14-cell word, wrapped words at the right end replaced by the last valid flag). With the current centred flags eca_box.py gives results/eca_box.txt: the box species counts agree, its per-step densities differ in the last digit (bulk) and near the ends; the ring has 83 bulk tracks (B 0.39, C 0.16, E 0.14, F 0.13, A 0.08). No number of main.tex comes from this file.
 periodic: bulk tracks 85: B=32 (0.38), C=13 (0.15), F=13 (0.15), E=12 (0.14), A=7 (0.08), D=5 (0.06), ?=3 (0.04)
           per-step: bulk defect density 0.0742, bulk clusters per 1100 cells 4.0, defect density within 30 cells of the ends 0.0020
 mirror  : bulk tracks 48: A=23 (0.48), B=7 (0.15), E=7 (0.15), C=5 (0.10), F=4 (0.08), D=2 (0.04)

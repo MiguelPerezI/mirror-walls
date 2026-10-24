@@ -1,0 +1,9 @@
+# png2pdf.py ../figures/class4_1d_a0.398_periodic.png ../figures/class4_1d_a0.398_mirror.png ../figures/class4_1d_wallzoom.png
+../figures/class4_1d_a0.398_periodic.png: 900x1800 -> 171422 rectangles, 0.76 MB
+../figures/class4_1d_a0.398_mirror.png: 900x1800 -> 169737 rectangles, 0.75 MB
+../figures/class4_1d_wallzoom.png: 240x1200 -> 17249 rectangles, 0.07 MB
+# png2pdf.py ../figures/cuts2d_spacetime.png
+../figures/cuts2d_spacetime.png: 792x260 -> 191419 rectangles, 0.81 MB
+# png2pdf.py ../figures/filmstrip2d_a0.33.png ../figures/filmstrip2d_a0.49.png
+../figures/filmstrip2d_a0.33.png: 1040x520 -> 121026 rectangles, 0.52 MB
+../figures/filmstrip2d_a0.49.png: 1040x520 -> 124407 rectangles, 0.54 MB

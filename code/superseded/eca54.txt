@@ -1,3 +1,4 @@
+# SUPERSEDED: output of the rule-54 defect detector of SELECTION_EXPERIMENT.md Part B2 (non-ether 4-words, clusters with gap 2), which counts each mover about twice and merges trains; see the erratum at the top of SELECTION_EXPERIMENT.md. Exact replacements: rule54_exact.py, rule54_phases.py, rule54_sparse.py, rule54_charge.py (outputs in results/).
 periodic: bulk tracks 809; per-step bulk defect density 0.2915, bulk clusters 20.1, defect density within 30 cells of ends 0.2469
     v in [-1.05,-0.95):  220 (0.27)  width   9.9  mean life   123
     v in [-0.95,-0.85):   10 (0.01)  width   9.7  mean life    71

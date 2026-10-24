@@ -18,5 +18,5 @@ for a in (0.33, 0.49, 0.51, 0.67, 0.02, 0.398):
         prev = A; u = step(u, a)
     tiles.append(disp(u - np.roll(u,-1,1))); tiles.append(disp(np.array(cut)))
     print(f"a={a:.3f}  late activity={A.mean():.3f}  persistence P(active at t+1 | active at t)={np.mean(pers):.3f} (random would be {A.mean():.3f})")
-write_gray('/home/mike666/heat-parity-ca/figures/cuts2d_frames.png', montage(tiles[0::2], cols=6))
-write_gray('/home/mike666/heat-parity-ca/figures/cuts2d_spacetime.png', montage(tiles[1::2], cols=6))
+write_gray('../figures/cuts2d_frames.png', montage(tiles[0::2], cols=6))
+write_gray('../figures/cuts2d_spacetime.png', montage(tiles[1::2], cols=6))

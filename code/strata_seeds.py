@@ -1,5 +1,5 @@
 """Activity per boundary stratum, several seeds: mean and standard error per codimension (mirror box).
-usage: python3.12 strata_seeds.py a N2 T2 N3 T3 seeds"""
+usage: python3 strata_seeds.py a N2 T2 N3 T3 seeds"""
 import sys, numpy as np
 from contca import step, codim
 DEC, TH = 9, 0.05

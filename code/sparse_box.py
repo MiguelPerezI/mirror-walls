@@ -14,4 +14,4 @@ for bc in ('mirror', 'periodic'):
     cnt = np.array(cnt)
     print(f"{bc:8s}: clusters at t=100,300,600,1000,1500,2000,2500,2999 -> " + ','.join(str(cnt[t]) for t in (100,300,600,1000,1500,2000,2500,2999))
           + f"   mean over last 1000 = {cnt[-1000:].mean():.2f}")
-    write_gray(f'/home/mike666/heat-parity-ca/figures/sparse_{bc}.png', upscale((255*(1-np.array(rows[::3], float))).astype(np.uint8), 2))
+    write_gray(f'../figures/sparse_{bc}.png', upscale((255*(1-np.array(rows[::3], float))).astype(np.uint8), 2))

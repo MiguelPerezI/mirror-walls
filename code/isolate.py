@@ -32,6 +32,6 @@ for k, tr in enumerate(long[:40]):
     after = alive[min(len(alive)-1, t_hit+150):].mean() if t_hit > 0 else alive[-200:].mean()
     results.append((k, v, t_hit, alive[:50].mean(), after))
     img = (255*(1-np.array(rows))).astype(np.uint8)
-    write_gray(f'/home/mike666/heat-parity-ca/figures/isolate_{k}.png', upscale(img[::2], 2))
+    write_gray(f'../figures/isolate_{k}.png', upscale(img[::2], 2))
     print(f"structure {k}: v={v:+.3f}  launched at {start}, expected wall hit ~t={t_hit}; clusters alive early={alive[:50].mean():.2f}, 150+ steps after hit={after:.2f}; "
           f"clusters at t=200,600,1000,1399: {alive[200]},{alive[600]},{alive[1000]},{alive[1399]}")
